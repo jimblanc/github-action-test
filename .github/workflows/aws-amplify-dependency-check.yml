@@ -2,7 +2,7 @@ name: Validate changes to "aws-amplify" package.json file
 on:
   pull_request:
     branches: [main]
-    types: [opened]
+    types: [opened, reopened]
 jobs:
   checkUmbrellaDependencies:
     permissions:
