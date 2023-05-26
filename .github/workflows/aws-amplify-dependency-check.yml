@@ -31,4 +31,6 @@ jobs:
               repo: context.repo.repo,
               body: '⚠️ This PR includes manual changes to the "aws-amplify" package.json file, which can result in dependency misalignment. A repository administrator is required to review & merge this change.'
             })
+      - name: Fail status check
+        if: steps.aws-amplify-package-check.outputs.any_changed == 'true'
         run: exit 1
