@@ -9,7 +9,7 @@ jobs:
       pull-requests: write # Used to add comment to PR
     name: Checks if the "aws-amplify" package.json has been manually changed.
     runs-on: ubuntu-latest
-    if: github.event.action == 'opened'
+    if: github.event.action == 'opened' || github.event.action == 'reopened'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
